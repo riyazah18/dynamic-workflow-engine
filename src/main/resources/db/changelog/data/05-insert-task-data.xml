@@ -1,0 +1,37 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+
+<changeSet id="1000000005" author="riyaz.ahmed">
+        <insert tableName="task">
+            <column name="title" value="Implement Login Feature"/>
+            <column name="description" value="Create a secure login feature for the app"/>
+            <column name="created_date" value="2024-01-01T10:00:00"/>
+            <column name="last_updated_date" value="2024-01-01T10:00:00"/>
+            <column name="current_state_id" value="1"/> <!-- "To Do" -->
+            <column name="assignee_id" value="3"/> <!-- "developer_1" -->
+        </insert>
+
+        <insert tableName="task">
+            <column name="title" value="Build Task Management API"/>
+            <column name="description" value="Develop endpoints for task management"/>
+            <column name="created_date" value="2024-01-02T12:00:00"/>
+            <column name="last_updated_date" value="2024-01-02T12:00:00"/>
+            <column name="current_state_id" value="1"/> <!-- "To Do" -->
+            <column name="assignee_id" value="3"/> <!-- "developer_1" -->
+        </insert>
+
+        <insert tableName="task">
+            <column name="title" value="Set Up Continuous Integration"/>
+            <column name="description" value="Configure CI pipeline for project deployment"/>
+            <column name="created_date" value="2024-01-03T15:00:00"/>
+            <column name="last_updated_date" value="2024-01-03T15:00:00"/>
+            <column name="current_state_id" value="2"/> <!-- "In Progress" -->
+            <column name="assignee_id" value="2"/> <!-- "project_manager" -->
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

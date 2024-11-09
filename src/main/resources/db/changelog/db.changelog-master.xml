@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+<!-- schema designing -->
+    <include file="/db/changelog/schema/01-create-user-table.xml"/>
+    <include file="/db/changelog/schema/02-create-workflow-table.xml"/>
+    <include file="/db/changelog/schema/03-create-workflow-state-table.xml"/>
+    <include file="/db/changelog/schema/04-create-workflow-transition-table.xml"/>
+    <include file="/db/changelog/schema/05-create-task-table.xml"/>
+    <!-- data insertion -->
+    <include file="db/changelog/data/01-insert-user-data.xml"/>
+    <include file="db/changelog/data/02-insert-workflow-data.xml"/>
+    <include file="db/changelog/data/03-insert-workflow-state-data.xml"/>
+    <include file="db/changelog/data/04-insert-workflow-transition-data.xml"/>
+    <include file="db/changelog/data/05-insert-task-data.xml"/>
+
+
+</databaseChangeLog>

@@ -1,0 +1,38 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+
+<changeSet id="0000000005" author="riyaz.ahmed">
+        <createTable tableName="task">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_TASK"/>
+            </column>
+            <column name="title" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT"/>
+            <column name="created_date" type="DATETIME"/>
+            <column name="last_updated_date" type="DATETIME"/>
+            <column name="current_state_id" type="BIGINT"/>
+            <column name="assignee_id" type="BIGINT"/>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="task"
+                baseColumnNames="current_state_id"
+                constraintName="fk_task_current_state"
+                referencedTableName="workflow_state"
+                referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint
+                baseTableName="task"
+                baseColumnNames="assignee_id"
+                constraintName="fk_task_assignee"
+                referencedTableName="user"
+                referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>
