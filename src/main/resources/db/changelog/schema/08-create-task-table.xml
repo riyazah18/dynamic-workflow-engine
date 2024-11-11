@@ -1,0 +1,22 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="0000000008" author="riyaz.ahmed">
+        <createTable tableName="TASK">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_TASK"/>
+            </column>
+            <column name="title" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT"/>
+            <column name="created_date" type="DATETIME"/>
+            <column name="last_updated_date" type="DATETIME"/>
+            <column name="current_state_id" type="varchar(30)"/>
+            <column name="assignee_id" type="varchar(30)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

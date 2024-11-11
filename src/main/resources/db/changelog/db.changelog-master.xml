@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog
-        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-<!-- schema designing -->
-    <include file="/db/changelog/schema/01-create-user-table.xml"/>
-    <include file="/db/changelog/schema/02-create-workflow-table.xml"/>
-    <include file="/db/changelog/schema/03-create-workflow-state-table.xml"/>
-    <include file="/db/changelog/schema/04-create-workflow-transition-table.xml"/>
-    <include file="/db/changelog/schema/05-create-task-table.xml"/>
+    <!-- schema designing -->
+    <include file="/db/changelog/schema/00-create-user-table.xml"/>
+    <include file="/db/changelog/schema/01-create-org-role-table.xml"/>
+    <include file="/db/changelog/schema/02-create-org-user-role-table.xml"/>
+    <include file="/db/changelog/schema/03-create-workflow-process-table.xml"/>
+    <include file="/db/changelog/schema/04-create-workflow-process-participant-table.xml"/>
+    <include file="/db/changelog/schema/05-create-workflow-global-state-table.xml"/>
+    <include file="/db/changelog/schema/06-create-workflow-state-table.xml"/>
+    <include file="/db/changelog/schema/07-create-workflow-transition-table.xml"/>
+    <include file="/db/changelog/schema/08-create-task-table.xml"/>
     <!-- data insertion -->
-    <include file="db/changelog/data/01-insert-user-data.xml"/>
-    <include file="db/changelog/data/02-insert-workflow-data.xml"/>
-    <include file="db/changelog/data/03-insert-workflow-state-data.xml"/>
-    <include file="db/changelog/data/04-insert-workflow-transition-data.xml"/>
-    <include file="db/changelog/data/05-insert-task-data.xml"/>
-
+    <include file="/db/changelog/data/00-insert-user-table.xml"/>
+    <include file="/db/changelog/data/01-insert-org-role-table.xml"/>
+    <include file="/db/changelog/data/02-insert-org-user-role-table.xml"/>
+    <include file="/db/changelog/data/03-insert-workflow-process-table.xml"/>
+    <include file="/db/changelog/data/04-insert-workflow-process-participant-table.xml"/>
+    <include file="/db/changelog/data/05-insert-workflow-global-state-table.xml"/>
+    <include file="/db/changelog/data/06-insert-workflow-state-table.xml"/>
+    <include file="/db/changelog/data/07-insert-workflow-transition-table.xml"/>
+    <include file="/db/changelog/data/08-insert-task-table.xml"/>
 
 </databaseChangeLog>

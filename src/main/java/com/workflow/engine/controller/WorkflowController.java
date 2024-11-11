@@ -1,6 +1,5 @@
 package com.workflow.engine.controller;
 
-import com.workflow.engine.entity.Workflow;
 import com.workflow.engine.service.WorkflowService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -15,22 +14,22 @@ public class WorkflowController {
     private final WorkflowService workflowService;
 
     @GetMapping
-    public List<Workflow> getAllWorkflows() {
+    public List<Process> getAllWorkflows() {
         return workflowService.getAllWorkflows();
     }
 
     @PostMapping
-    public Workflow createWorkflow(@RequestBody Workflow workflow) {
+    public Process createWorkflow(@RequestBody Process workflow) {
         return workflowService.createWorkflow(workflow);
     }
 
     @GetMapping("/{id}")
-    public Workflow getWorkflowById(@PathVariable Long id) {
+    public Process getWorkflowById(@PathVariable Long id) {
         return workflowService.getWorkflowById(id);
     }
 
     @PutMapping("/{id}")
-    public Workflow updateWorkflow(@PathVariable Long id, @RequestBody Workflow workflow) {
+    public Process updateWorkflow(@PathVariable Long id, @RequestBody Process workflow) {
         return workflowService.updateWorkflow(id, workflow);
     }
 
@@ -38,7 +37,7 @@ public class WorkflowController {
     public void deleteWorkflow(@PathVariable Long id) {
         workflowService.deleteWorkflow(id);
     }
-    
+
     // Other endpoint methods for WorkflowState, User, Task, WorkflowTransition
     // Add similar methods for other entities
 }

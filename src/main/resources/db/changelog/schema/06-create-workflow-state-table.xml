@@ -1,0 +1,59 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+
+    <changeSet id="0000000005" author="riyaz.ahmed">
+        <createTable tableName="WF_STATE">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_STATE"/>
+            </column>
+            <column name="PROCESS_CODE" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STATE_CODE" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IS_START" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IS_END" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IS_ADHOC" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IS_PARKED" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="UPDATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="WF_STATE"
+                baseColumnNames="PROCESS_CODE"
+                constraintName="FK_WF_STATE_PROCESS_CODE_FROM_WF_PROCESS"
+                referencedTableName="WF_PROCESS"
+                referencedColumnNames="PROCESS_CODE"/>
+        <addForeignKeyConstraint
+                baseTableName="WF_STATE"
+                baseColumnNames="STATE_CODE"
+                constraintName="FK_WF_STATE_PROCESS_CODE_FROM_WF_GLOBAL_STATE"
+                referencedTableName="WF_GLOBAL_STATE"
+                referencedColumnNames="ID"/>
+    </changeSet>
+
+</databaseChangeLog>

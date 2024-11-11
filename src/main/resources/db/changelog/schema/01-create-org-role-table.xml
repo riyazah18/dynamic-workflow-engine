@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="0000000001" author="riyaz.ahmed">
+        <createTable tableName="ORG_ROLE">
+            <column name="ID" type="varchar(25)" autoIncrement="false">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_ORG_ROLE"/>
+            </column>
+            <column name="ROLE_NAME_EN" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROLE_NAME_AR" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="UPDATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

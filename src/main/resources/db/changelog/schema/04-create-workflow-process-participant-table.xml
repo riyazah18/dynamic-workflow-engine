@@ -1,0 +1,47 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="WFPP000002" author="riyaz.ahmed">
+        <createTable tableName="WF_PROCESS_PARTICIPANT">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_PROCESS_PARTICIPANT"/>
+            </column>
+            <column name="PROCESS_CODE" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROLE_ID" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="UPDATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="WF_PROCESS_PARTICIPANT"
+                baseColumnNames="PROCESS_CODE"
+                constraintName="FK_PROCESS_CODE_FROM_WF_PROCESS"
+                referencedTableName="WF_PROCESS"
+                referencedColumnNames="PROCESS_CODE"/>
+        <addForeignKeyConstraint
+                baseTableName="WF_PROCESS_PARTICIPANT"
+                baseColumnNames="ROLE_ID"
+                constraintName="FK_WF_PROCESS_PARTICIPANT_FROM_ORG_ROLE"
+                referencedTableName="ORG_ROLE"
+                referencedColumnNames="ID"/>
+
+    </changeSet>
+
+</databaseChangeLog>

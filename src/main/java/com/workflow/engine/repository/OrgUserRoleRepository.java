@@ -1,12 +1,12 @@
 package com.workflow.engine.repository;
 
-import com.workflow.engine.entity.User;
+import com.workflow.engine.entity.OrgUserRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<Object> findByLoginId(String assigneeLoginId);
+public interface OrgUserRoleRepository extends JpaRepository<OrgUserRole, Long> {
+    Optional<OrgUserRole> findByLoginId(String assigneeLoginId);
 }

@@ -1,0 +1,35 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="INS-WFPP002" author="riyaz.ahmed">
+        <insert tableName="WF_PROCESS_PARTICIPANT">
+            <column name="PROCESS_CODE" value="PROC001"/>
+            <column name="ROLE_ID" value="001"/>
+            <column name="CREATED_ON" valueDate="2023-10-01 12:00:00"/>
+            <column name="CREATED_BY" value="user1"/>
+            <column name="UPDATED_ON" valueDate="2023-10-01 12:00:00"/>
+            <column name="UPDATED_BY" value="user1"/>
+        </insert>
+        <insert tableName="WF_PROCESS_PARTICIPANT">
+            <column name="PROCESS_CODE" value="PROC002"/>
+            <column name="ROLE_ID" value="002"/>
+            <column name="CREATED_ON" valueDate="2023-10-02 12:00:00"/>
+            <column name="CREATED_BY" value="user2"/>
+            <column name="UPDATED_ON" valueDate="2023-10-02 12:00:00"/>
+            <column name="UPDATED_BY" value="user2"/>
+        </insert>
+        <insert tableName="WF_PROCESS_PARTICIPANT">
+            <column name="PROCESS_CODE" value="PROC003"/>
+            <column name="ROLE_ID" value="003"/>
+            <column name="CREATED_ON" valueDate="2023-10-03 12:00:00"/>
+            <column name="CREATED_BY" value="user3"/>
+            <column name="UPDATED_ON" valueDate="2023-10-03 12:00:00"/>
+            <column name="UPDATED_BY" value="user3"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

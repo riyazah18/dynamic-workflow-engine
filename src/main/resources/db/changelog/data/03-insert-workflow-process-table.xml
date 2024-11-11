@@ -1,0 +1,48 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="INS-0000003" author="riyaz.ahmed">
+        <insert tableName="WF_PROCESS">
+            <column name="PROCESS_CODE" value="PROC001"/>
+            <column name="PROCESS_NAME_EN" value="Registration Process"/>
+            <column name="PROCESS_NAME_AR" value="عملية التسجيل"/>
+            <column name="PROCESS_TYPE" valueNumeric="1"/>
+            <column name="EFFECTIVE_FROM" valueDate="2023-01-01T00:00:00"/>
+            <column name="EFFECTIVE_TO" valueDate="2023-12-31T23:59:59"/>
+            <column name="CREATED_ON" valueDate="2023-01-01T00:00:00"/>
+            <column name="CREATED_BY" value="admin1"/>
+            <column name="UPDATED_ON" valueDate="2023-01-01T00:00:00"/>
+            <column name="UPDATED_BY" value="admin1"/>
+        </insert>
+
+        <insert tableName="WF_PROCESS">
+            <column name="PROCESS_CODE" value="PROC002"/>
+            <column name="PROCESS_NAME_EN" value="Verification Process"/>
+            <column name="PROCESS_NAME_AR" value="عملية التحقق"/>
+            <column name="PROCESS_TYPE" valueNumeric="2"/>
+            <column name="EFFECTIVE_FROM" valueDate="2023-02-01T00:00:00"/>
+            <column name="EFFECTIVE_TO" valueDate="2023-12-31T23:59:59"/>
+            <column name="CREATED_ON" valueDate="2023-02-01T00:00:00"/>
+            <column name="CREATED_BY" value="admin2"/>
+            <column name="UPDATED_ON" valueDate="2023-02-01T00:00:00"/>
+            <column name="UPDATED_BY" value="admin2"/>
+        </insert>
+
+        <insert tableName="WF_PROCESS">
+            <column name="PROCESS_CODE" value="PROC003"/>
+            <column name="PROCESS_NAME_EN" value="Approval Process"/>
+            <column name="PROCESS_NAME_AR" value="عملية الموافقة"/>
+            <column name="PROCESS_TYPE" valueNumeric="3"/>
+            <column name="EFFECTIVE_FROM" valueDate="2023-03-01T00:00:00"/>
+            <column name="EFFECTIVE_TO" valueDate="2023-12-31T23:59:59"/>
+            <column name="CREATED_ON" valueDate="2023-03-01T00:00:00"/>
+            <column name="CREATED_BY" value="admin3"/>
+            <column name="UPDATED_ON" valueDate="2023-03-01T00:00:00"/>
+            <column name="UPDATED_BY" value="admin3"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

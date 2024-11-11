@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="0000000002" author="riyaz.ahmed">
+        <createTable tableName="ORG_USER_ROLE">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_ORG_USER_ROLE"/>
+            </column>
+            <column name="ROLE_ID" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LOGIN_ID" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="UPDATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint
+                baseTableName="ORG_USER_ROLE"
+                baseColumnNames="ROLE_ID"
+                constraintName="FK_ORG_USER_ROLE_ROLE_ID_FROM_ORG_ROLE"
+                referencedTableName="ORG_ROLE"
+                referencedColumnNames="ID"/>
+        <addForeignKeyConstraint
+                baseTableName="ORG_USER_ROLE"
+                baseColumnNames="LOGIN_ID"
+                constraintName="FK_ORG_USER_ROLE_ID_FROM_USER"
+                referencedTableName="USER"
+                referencedColumnNames="ID"/>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,20 +1,26 @@
 package com.workflow.engine.entity;
 
-import com.workflow.engine.enums.Role;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
-@Data
+@Table(name = "\"USER\"", schema = "dbo")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
-    
-    private String username;
-    private String password;
-    
-    @Enumerated(EnumType.STRING)
-    private Role role;
-}
 
+    @Column(name = "LOGIN_ID", nullable = false, length = 25)
+    private String loginId;
+
+    @Column(name = "USERNAME", nullable = false)
+    private String username;
+
+    @Column(name = "PASSWORD", nullable = false)
+    private String password;
+
+}

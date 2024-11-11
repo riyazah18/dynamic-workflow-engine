@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="0000000002" author="riyaz.ahmed">
+        <insert tableName="ORG_USER_ROLE">
+            <column name="ROLE_ID" value="001"/>
+            <column name="LOGIN_ID" value="1"/>
+            <column name="CREATED_ON" value="2023-10-10T10:00:00"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="UPDATED_ON" value="2023-10-10T15:00:00"/>
+            <column name="UPDATED_BY" value="admin"/>
+        </insert>
+        <insert tableName="ORG_USER_ROLE">
+            <column name="ROLE_ID" value="002"/>
+            <column name="LOGIN_ID" value="2"/>
+            <column name="CREATED_ON" value="2023-10-11T11:00:00"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="UPDATED_ON" value="2023-10-11T16:00:00"/>
+            <column name="UPDATED_BY" value="admin"/>
+        </insert>
+        <insert tableName="ORG_USER_ROLE">
+            <column name="ROLE_ID" value="003"/>
+            <column name="LOGIN_ID" value="2"/>
+            <column name="CREATED_ON" value="2023-10-12T12:00:00"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="UPDATED_ON" value="2023-10-12T17:00:00"/>
+            <column name="UPDATED_BY" value="admin"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

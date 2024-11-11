@@ -1,0 +1,34 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+
+    <changeSet id="0000000005" author="riyaz.ahmed">
+        <createTable tableName="WF_GLOBAL_STATE">
+            <column name="ID" type="varchar(30)" autoIncrement="false">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_GLOBAL_STATE"/>
+            </column>
+            <column name="NAME_EN" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME_AR" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="UPDATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

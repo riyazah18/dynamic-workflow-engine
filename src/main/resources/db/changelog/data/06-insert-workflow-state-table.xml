@@ -1,0 +1,83 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+
+    <changeSet id="INS-00005" author="riyaz.ahmed">
+        <insert tableName="WF_STATE">
+            <column name="PROCESS_CODE" value="PROC001"/>
+            <column name="STATE_CODE" value="0000000000"/>
+            <column name="IS_START" value="true"/>
+            <column name="IS_END" value="false"/>
+            <column name="IS_ADHOC" value="false"/>
+            <column name="IS_PARKED" value="false"/>
+            <column name="CREATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="CREATED_BY" value="creator"/>
+            <column name="UPDATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="UPDATED_BY" value="updater"/>
+        </insert>
+        <insert tableName="WF_STATE">
+            <column name="PROCESS_CODE" value="PROC002"/>
+            <column name="STATE_CODE" value="0000000001"/>
+            <column name="IS_START" value="false"/>
+            <column name="IS_END" value="true"/>
+            <column name="IS_ADHOC" value="true"/>
+            <column name="IS_PARKED" value="false"/>
+            <column name="CREATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="CREATED_BY" value="creator"/>
+            <column name="UPDATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="UPDATED_BY" value="updater"/>
+        </insert>
+        <insert tableName="WF_STATE">
+            <column name="PROCESS_CODE" value="PROC002"/>
+            <column name="STATE_CODE" value="0000000002"/>
+            <column name="IS_START" value="false"/>
+            <column name="IS_END" value="true"/>
+            <column name="IS_ADHOC" value="true"/>
+            <column name="IS_PARKED" value="false"/>
+            <column name="CREATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="CREATED_BY" value="creator"/>
+            <column name="UPDATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="UPDATED_BY" value="updater"/>
+        </insert>
+        <insert tableName="WF_STATE">
+            <column name="PROCESS_CODE" value="PROC002"/>
+            <column name="STATE_CODE" value="0000000005"/>
+            <column name="IS_START" value="false"/>
+            <column name="IS_END" value="true"/>
+            <column name="IS_ADHOC" value="true"/>
+            <column name="IS_PARKED" value="false"/>
+            <column name="CREATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="CREATED_BY" value="creator"/>
+            <column name="UPDATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="UPDATED_BY" value="updater"/>
+        </insert>
+        <insert tableName="WF_STATE">
+            <column name="PROCESS_CODE" value="PROC003"/>
+            <column name="STATE_CODE" value="0000000003"/>
+            <column name="IS_START" value="false"/>
+            <column name="IS_END" value="true"/>
+            <column name="IS_ADHOC" value="true"/>
+            <column name="IS_PARKED" value="false"/>
+            <column name="CREATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="CREATED_BY" value="creator"/>
+            <column name="UPDATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="UPDATED_BY" value="updater"/>
+        </insert>
+        <insert tableName="WF_STATE">
+            <column name="PROCESS_CODE" value="PROC003"/>
+            <column name="STATE_CODE" value="0000000004"/>
+            <column name="IS_START" value="false"/>
+            <column name="IS_END" value="true"/>
+            <column name="IS_ADHOC" value="true"/>
+            <column name="IS_PARKED" value="false"/>
+            <column name="CREATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="CREATED_BY" value="creator"/>
+            <column name="UPDATED_ON" valueDate="2023-10-10T00:00:00"/>
+            <column name="UPDATED_BY" value="updater"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

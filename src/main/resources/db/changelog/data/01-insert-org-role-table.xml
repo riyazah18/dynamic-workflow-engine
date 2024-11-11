@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="INS-0000001" author="riyaz.ahmed">
+        <insert tableName="ORG_ROLE">
+            <column name="ID" value="001"/>
+            <column name="ROLE_NAME_EN" value="User"/>
+            <column name="ROLE_NAME_AR" value="مستخدم"/>
+            <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="UPDATED_ON" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="UPDATED_BY" value="admin"/>
+        </insert>
+        <insert tableName="ORG_ROLE">
+            <column name="ID" value="002"/>
+            <column name="ROLE_NAME_EN" value="Administrator"/>
+            <column name="ROLE_NAME_AR" value="مدير"/>
+            <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="UPDATED_ON" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="UPDATED_BY" value="admin"/>
+        </insert>
+        <insert tableName="ORG_ROLE">
+            <column name="ID" value="003"/>
+            <column name="ROLE_NAME_EN" value="Manager"/>
+            <column name="ROLE_NAME_AR" value="مدير"/>
+            <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="UPDATED_ON" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="UPDATED_BY" value="admin"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

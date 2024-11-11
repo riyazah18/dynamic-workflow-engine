@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="INS-0000000" author="riyaz.ahmed">
+        <insert tableName="USER">
+            <column name="LOGIN_ID" value="john_doe"/>
+            <column name="USERNAME" value="John Doe"/>
+            <column name="PASSWORD" value="password123"/>
+        </insert>
+        <insert tableName="USER">
+            <column name="LOGIN_ID" value="jane_doe"/>
+            <column name="USERNAME" value="Jane Doe"/>
+            <column name="PASSWORD" value="password456"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

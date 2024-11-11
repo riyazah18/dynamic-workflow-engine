@@ -1,0 +1,42 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="0000000003" author="riyaz.ahmed">
+        <createTable tableName="WF_PROCESS">
+            <column name="PROCESS_CODE" type="varchar(25)" autoIncrement="false">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_PROCESS"/>
+            </column>
+            <column name="PROCESS_NAME_EN" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PROCESS_NAME_AR" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PROCESS_TYPE" type="numeric(2,0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EFFECTIVE_FROM" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EFFECTIVE_TO" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="UPDATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,71 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+
+    <changeSet id="INS-0000007" author="riyaz.ahmed">
+        <insert tableName="WF_TRANSITION">
+            <column name="PROCESS_CODE" value="PROC001"/>
+            <column name="FROM_STATE_ID" value="0000000000"/>
+            <column name="TO_STATE_ID" value="0000000001"/>
+            <column name="IS_NOTIFICATION_ENABLE" value="True"/>
+            <column name="NOTIFICATION_TYPE" value="EMAIL"/>
+            <column name="TO_STATE_ID" value="0000000001"/>
+            <column name="CREATED_ON" value="2023-01-01T00:00:00.000"/>
+            <column name="CREATED_BY" value="user1"/>
+            <column name="UPDATED_ON" value="2023-01-02T00:00:00.000"/>
+            <column name="UPDATED_BY" value="user2"/>
+        </insert>
+
+        <insert tableName="WF_TRANSITION">
+            <column name="PROCESS_CODE" value="PROC002"/>
+            <column name="FROM_STATE_ID" value="0000000001"/>
+            <column name="TO_STATE_ID" value="0000000002"/>
+            <column name="IS_NOTIFICATION_ENABLE" value="False"/>
+            <column name="NOTIFICATION_TYPE" value=""/>
+            <column name="CREATED_ON" value="2023-02-01T00:00:00.000"/>
+            <column name="CREATED_BY" value="user3"/>
+            <column name="UPDATED_ON" value="2023-02-02T00:00:00.000"/>
+            <column name="UPDATED_BY" value="user4"/>
+        </insert>
+
+        <insert tableName="WF_TRANSITION">
+            <column name="PROCESS_CODE" value="PROC002"/>
+            <column name="FROM_STATE_ID" value="0000000002"/>
+            <column name="TO_STATE_ID" value="0000000005"/>
+            <column name="IS_NOTIFICATION_ENABLE" value="True"/>
+            <column name="NOTIFICATION_TYPE" value="SMS"/>
+            <column name="CREATED_ON" value="2023-02-01T00:00:00.000"/>
+            <column name="CREATED_BY" value="user3"/>
+            <column name="UPDATED_ON" value="2023-02-02T00:00:00.000"/>
+            <column name="UPDATED_BY" value="user4"/>
+        </insert>
+
+        <insert tableName="WF_TRANSITION">
+            <column name="PROCESS_CODE" value="PROC003"/>
+            <column name="FROM_STATE_ID" value="0000000005"/>
+            <column name="TO_STATE_ID" value="0000000004"/>
+            <column name="IS_NOTIFICATION_ENABLE" value="True"/>
+            <column name="NOTIFICATION_TYPE" value="EMAIL"/>
+            <column name="CREATED_ON" value="2023-02-01T00:00:00.000"/>
+            <column name="CREATED_BY" value="user3"/>
+            <column name="UPDATED_ON" value="2023-02-02T00:00:00.000"/>
+            <column name="UPDATED_BY" value="user4"/>
+        </insert>
+
+        <insert tableName="WF_TRANSITION">
+            <column name="PROCESS_CODE" value="PROC003"/>
+            <column name="FROM_STATE_ID" value="0000000005"/>
+            <column name="TO_STATE_ID" value="0000000003"/>
+            <column name="IS_NOTIFICATION_ENABLE" value="True"/>
+            <column name="NOTIFICATION_TYPE" value="SMS"/>
+            <column name="CREATED_ON" value="2023-02-01T00:00:00.000"/>
+            <column name="CREATED_BY" value="user3"/>
+            <column name="UPDATED_ON" value="2023-02-02T00:00:00.000"/>
+            <column name="UPDATED_BY" value="user4"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,17 +1,13 @@
 package com.workflow.engine.service;
 
-import com.workflow.engine.entity.Task;
-import com.workflow.engine.entity.User;
-import com.workflow.engine.entity.WorkflowState;
-import com.workflow.engine.entity.WorkflowTransition;
+import com.workflow.engine.entity.*;
+import com.workflow.engine.enums.NotificationType;
 import com.workflow.engine.model.TaskRequestModel;
-import com.workflow.engine.repository.TaskRepository;
-import com.workflow.engine.repository.UserRepository;
-import com.workflow.engine.repository.WorkflowStateRepository;
-import com.workflow.engine.repository.WorkflowTransitionRepository;
+import com.workflow.engine.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Service
@@ -20,45 +16,89 @@ public class TaskService {
 
     private final TaskRepository taskRepository;
     private final WorkflowTransitionRepository transitionRepository;
-    private final WorkflowStateRepository stateRepository;
+    private final WorkflowStateRepository workflowStateRepository;
     private final UserRepository userRepository;
+    private final OrgUserRoleRepository orgUserRoleRepository;
+    private final WfProcessParticipantRepository wfProcessParticipantRepository;
 
     public Task createTask(TaskRequestModel taskRequestModel) {
         Task task = new Task();
         task.setTitle(taskRequestModel.getTitle());
         task.setDescription(taskRequestModel.getDescription());
-        task.setCreatedDate(taskRequestModel.getCreatedDate() != null
+        task.setCreatedDate(Instant.from(taskRequestModel.getCreatedDate() != null
                 ? taskRequestModel.getCreatedDate()
-                : LocalDateTime.now());
-        task.setLastUpdatedDate(LocalDateTime.now());
+                : LocalDateTime.now()));
+        task.setLastUpdatedDate(Instant.from(LocalDateTime.now()));
 
         // Fetch and set current state
-        WorkflowState currentState = stateRepository.findById(taskRequestModel.getCurrentStateId())
+        WfState currentState = workflowStateRepository.findById(taskRequestModel.getCurrentStateId())
                 .orElseThrow(() -> new IllegalStateException("Invalid state ID"));
-        task.setCurrentState(currentState);
+        task.setCurrentStateId(currentState.getId().toString());
 
         // Fetch and set assignee
         User assignee = userRepository.findById(taskRequestModel.getAssigneeId())
                 .orElseThrow(() -> new IllegalStateException("Invalid user ID"));
-        task.setAssignee(assignee);
+        task.setAssigneeId(assignee.getLoginId());
 
         return taskRepository.save(task);
     }
 
-    public Task updateTaskState(Long taskId, Long toStateId) throws IllegalStateException {
+    public Task moveTaskToNextState(Long taskId, String toStateId) throws IllegalStateException {
         Task task = taskRepository.findById(taskId)
                 .orElseThrow(() -> new IllegalStateException("Task not found"));
 
-        WorkflowState currentState = task.getCurrentState();
+        String currentState = task.getCurrentStateId();
+        String assigneeLoginId = task.getAssigneeId();
+
+        // Check if assignee has the right process and states bound to his role
+        OrgUserRole orgUserRole = getOrgUserRole(assigneeLoginId);
+
+// Retrieve the WfProcessParticipant for the assignee
+        WfProcessParticipant processParticipant = getProcessParticipant(orgUserRole);
+
+// Get and use the process code
+        String processCode = String.valueOf(processParticipant.getProcessCode());
 
         // Check if transition is allowed
-        WorkflowTransition transition = (WorkflowTransition) transitionRepository
-                .findByFromState_IdAndToState_Id(currentState.getId(), toStateId)
-                .orElseThrow(() -> new IllegalStateException("Invalid transition"));
+        WfTransition transition = getWfTransition(toStateId, currentState, processCode);
 
-        task.setCurrentState(transition.getToState());
-        task.setLastUpdatedDate(LocalDateTime.now());
+        task.setCurrentStateId(transition.getToState().getId());
+        task.setLastUpdatedDate(Instant.from(LocalDateTime.now()));
+        if (Boolean.TRUE.equals(transition.getIsNotificationEnable())) {
+            sendNotification(transition.getNotificationType());
+        }
 
         return taskRepository.save(task);
+    }
+
+    private WfTransition getWfTransition(String toStateId, String currentState, String processCode) {
+        return transitionRepository
+                .findByFromState_IdAndToState_IdAndProcessCode(currentState, toStateId, processCode)
+                .orElseThrow(() -> new IllegalStateException("Invalid transition"));
+    }
+
+    private WfProcessParticipant getProcessParticipant(OrgUserRole orgUserRole) {
+        return wfProcessParticipantRepository.findWfProcessParticipantByRoleId(orgUserRole.getRole())
+                .orElseThrow(() -> new IllegalStateException("Process participant not found"));
+    }
+
+    private OrgUserRole getOrgUserRole(String assigneeLoginId) {
+        return orgUserRoleRepository.findByLoginId(assigneeLoginId)
+                .orElseThrow(() -> new IllegalStateException("Assignee not found"));
+    }
+
+    // New Method to handle notifications
+    private void sendNotification(String notificationType) {
+        NotificationType type = NotificationType.valueOf(notificationType.toUpperCase());
+        switch (type) {
+            case EMAIL:
+                // send email
+                break;
+            case SMS:
+                // send sms
+                break;
+            default:
+                throw new IllegalArgumentException("Unknown notification type: " + notificationType);
+        }
     }
 }
