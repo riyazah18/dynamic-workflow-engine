@@ -13,7 +13,6 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "ORG_ROLE", schema = "dbo")
 public class OrgRole {
     @Id
     @Column(name = "ID", nullable = false, length = 25)

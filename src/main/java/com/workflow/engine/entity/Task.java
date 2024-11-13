@@ -5,11 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "TASK", schema = "dbo")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,5 +35,10 @@ public class Task {
 
     @Column(name = "assignee_id", length = 30)
     private String assigneeId;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "task")
+    private List<TaskActivity> taskActivities = new ArrayList<>();
+    @Transient
+    private String previousStateId;
 
 }

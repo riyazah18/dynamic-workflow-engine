@@ -14,7 +14,6 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "WF_PROCESS", schema = "dbo")
 public class WfProcess {
     @Id
     @Column(name = "PROCESS_CODE", nullable = false, length = 25)

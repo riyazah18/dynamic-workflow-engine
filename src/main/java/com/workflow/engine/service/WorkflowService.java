@@ -1,5 +1,6 @@
 package com.workflow.engine.service;
 
+import com.workflow.engine.entity.WfProcess;
 import com.workflow.engine.repository.WorkflowRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,22 +13,22 @@ public class WorkflowService {
 
     private final WorkflowRepository workflowRepository;
 
-    public List<Process> getAllWorkflows() {
+    public List<WfProcess> getAllWorkflows() {
         return workflowRepository.findAll();
     }
 
-    public Process createWorkflow(Process process) {
+    public WfProcess createWorkflow(WfProcess process) {
         return workflowRepository.save(process);
     }
 
-    public Process getWorkflowById(Long id) {
+    public WfProcess getWorkflowById(Long id) {
         return workflowRepository.findById(id).orElse(null);
     }
 
-    public Process updateWorkflow(Long id, Process workflow) {
+    public WfProcess updateWorkflow(Long id, WfProcess process) {
         if (workflowRepository.existsById(id)) {
-            workflow.setProcessCode(String.valueOf(id));
-            return workflowRepository.save(workflow);
+            process.setProcessCode(String.valueOf(id));
+            return workflowRepository.save(process);
         } else {
             return null;
         }

@@ -13,7 +13,6 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "WF_GLOBAL_STATE", schema = "dbo")
 public class WfGlobalState {
     @Id
     @Column(name = "ID", nullable = false, length = 30)

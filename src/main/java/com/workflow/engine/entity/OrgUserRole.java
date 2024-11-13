@@ -10,7 +10,6 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "ORG_USER_ROLE", schema = "dbo")
 public class OrgUserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

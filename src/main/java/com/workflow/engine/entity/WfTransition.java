@@ -10,7 +10,6 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "WF_TRANSITION", schema = "dbo")
 public class WfTransition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

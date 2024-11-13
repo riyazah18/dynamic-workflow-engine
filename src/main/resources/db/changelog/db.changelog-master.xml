@@ -14,6 +14,7 @@
     <include file="/db/changelog/schema/06-create-workflow-state-table.xml"/>
     <include file="/db/changelog/schema/07-create-workflow-transition-table.xml"/>
     <include file="/db/changelog/schema/08-create-task-table.xml"/>
+    <include file="/db/changelog/schema/09-create-task-activity-table.xml"/>
     <!-- data insertion -->
     <include file="/db/changelog/data/00-insert-user-table.xml"/>
     <include file="/db/changelog/data/01-insert-org-role-table.xml"/>
