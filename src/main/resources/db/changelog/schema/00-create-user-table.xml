@@ -19,6 +19,18 @@
             <column name="PASSWORD" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
+            <column name="CREATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="UPDATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
         </createTable>
     </changeSet>
 
