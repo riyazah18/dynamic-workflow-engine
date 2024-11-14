@@ -1,0 +1,39 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="0000000010" author="riyaz.ahmed">
+        <createTable tableName="META_ENTITY">
+            <column name="ID" type="VARCHAR" autoIncrement="false">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_ENTITY"/>
+            </column>
+            <column name="PROCESS_CODE" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ENTITY_NAME_EN" type="varchar(50)"/>
+            <column name="ENTITY_NAME_AR" type="varchar(50)"/>
+            <column name="DESCRIPTION" type="TEXT"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="CREATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="UPDATED_ON" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="nvarchar(60)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint
+                baseTableName="META_ENTITY"
+                baseColumnNames="PROCESS_CODE"
+                constraintName="fk_PROCESS_CODE_from_WF_PROCESS_TO_META_ENTITY"
+                referencedTableName="WF_PROCESS"
+                referencedColumnNames="PROCESS_CODE"/>
+    </changeSet>
+</databaseChangeLog>

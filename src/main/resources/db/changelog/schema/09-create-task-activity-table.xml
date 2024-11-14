@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
-    <changeSet id="0000000008" author="riyaz.ahmed">
+    <changeSet id="0000000009" author="riyaz.ahmed">
         <createTable tableName="TASK_ACTIVITY">
             <column name="ID" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_TASK_ACTIVITY"/>
