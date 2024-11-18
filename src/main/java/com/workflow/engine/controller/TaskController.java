@@ -1,5 +1,6 @@
 package com.workflow.engine.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.workflow.engine.entity.Task;
 import com.workflow.engine.model.TaskRequestModel;
 import com.workflow.engine.service.TaskService;
@@ -16,12 +17,14 @@ public class TaskController {
     private final TaskService taskService;
 
     @PostMapping
+    @JsonView(value = Object.class)
     public ResponseEntity<Task> createTask(@RequestBody TaskRequestModel task) {
         Task createdTask = taskService.createTask(task);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTask);
     }
 
     @PutMapping("/{id}/state")
+    @JsonView(value = Object.class)
     public ResponseEntity<Task> performTaskTransition(
             @PathVariable Long id,
             @RequestParam String toStateId) {
