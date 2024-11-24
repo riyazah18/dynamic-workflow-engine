@@ -5,18 +5,22 @@
     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
     <changeSet id="0000000008" author="riyaz.ahmed">
+        <createSequence cycle="false" incrementBy="1" maxValue="9223372036854775807" minValue="-9223372036854775808"
+                        sequenceName="TASK_SEQ" startValue="1"/>
         <createTable tableName="TASK">
-            <column name="id" type="BIGINT" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_TASK"/>
+            <column computed="false" name="ID" type="bigint">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TASK_ID"/>
             </column>
-            <column name="title" type="VARCHAR(100)">
+            <column name="TITLE" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
-            <column name="description" type="TEXT"/>
-            <column name="created_date" type="DATETIME"/>
-            <column name="last_updated_date" type="DATETIME"/>
-            <column name="current_state_id" type="varchar(30)"/>
-            <column name="assignee_id" type="varchar(30)"/>
+            <column name="DESCRIPTION" type="TEXT"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="CREATED_BY" type="varchar(30)"/>
+            <column name="LAST_UPDATED_DATE" type="DATETIME"/>
+            <column name="UPDATED_BY" type="varchar(30)"/>
+            <column name="CURRENT_STATE_ID" type="varchar(30)"/>
+            <column name="ASSIGNEE_ID" type="varchar(30)"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

@@ -10,10 +10,11 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
+@Table(name = "[user]") // Escaping the table name 'user'
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wf_user_seq_generator")
+    @SequenceGenerator(name="wf_user_seq_generator", sequenceName = "wf_user_seq", allocationSize = 1)
     private Long id;
 
     @Column(name = "LOGIN_ID", nullable = false, length = 25)

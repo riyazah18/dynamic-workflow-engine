@@ -6,14 +6,16 @@
 
 
     <changeSet id="0000000005" author="riyaz.ahmed">
+        <createSequence cycle="false" incrementBy="1" maxValue="9223372036854775807" minValue="-9223372036854775808"
+                        sequenceName="WF_STATE_SEQ" startValue="1"/>
         <createTable tableName="WF_STATE">
-            <column name="ID" type="bigint" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_STATE"/>
+            <column computed="false" name="ID" type="bigint">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_WF_STATE_ID"/>
             </column>
-            <column name="PROCESS_CODE" type="VARCHAR(25)">
+            <column name="PROCESS_CODE" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="STATE_CODE" type="VARCHAR(30)">
+            <column name="STATE_CODE" type="bigint">
                 <constraints nullable="false"/>
             </column>
             <column name="IS_START" type="BOOLEAN">
@@ -47,7 +49,7 @@
                 baseColumnNames="PROCESS_CODE"
                 constraintName="FK_WF_STATE_PROCESS_CODE_FROM_WF_PROCESS"
                 referencedTableName="WF_PROCESS"
-                referencedColumnNames="PROCESS_CODE"/>
+                referencedColumnNames="ID"/>
         <addForeignKeyConstraint
                 baseTableName="WF_STATE"
                 baseColumnNames="STATE_CODE"

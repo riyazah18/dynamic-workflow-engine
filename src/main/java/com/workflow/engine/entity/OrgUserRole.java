@@ -12,8 +12,8 @@ import java.time.Instant;
 @Entity
 public class OrgUserRole {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wf_org_user_role_seq_generator")
+    @SequenceGenerator(name="wf_org_user_role_seq_generator", sequenceName = "wf_org_user_role_seq", allocationSize = 1)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -21,8 +21,8 @@ public class OrgUserRole {
     private OrgRole role;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "LOGIN_ID", nullable = false)
-    private User login;
+    @JoinColumn(name = "USER_ID", nullable = false)
+    private User user;
 
     @Column(name = "CREATED_ON", nullable = false)
     private Instant createdOn;

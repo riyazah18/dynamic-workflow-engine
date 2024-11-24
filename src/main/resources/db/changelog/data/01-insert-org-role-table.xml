@@ -7,7 +7,7 @@
 
     <changeSet id="INS-0000001" author="riyaz.ahmed">
         <insert tableName="ORG_ROLE">
-            <column name="ID" value="001"/>
+            <column name="ID" valueSequenceNext="WF_ORG_ROLE_SEQ"/>
             <column name="ROLE_NAME_EN" value="User"/>
             <column name="ROLE_NAME_AR" value="مستخدم"/>
             <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>
@@ -16,7 +16,7 @@
             <column name="UPDATED_BY" value="admin"/>
         </insert>
         <insert tableName="ORG_ROLE">
-            <column name="ID" value="002"/>
+            <column name="ID" valueSequenceNext="WF_ORG_ROLE_SEQ"/>
             <column name="ROLE_NAME_EN" value="Administrator"/>
             <column name="ROLE_NAME_AR" value="مدير"/>
             <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>
@@ -25,7 +25,7 @@
             <column name="UPDATED_BY" value="admin"/>
         </insert>
         <insert tableName="ORG_ROLE">
-            <column name="ID" value="003"/>
+            <column name="ID" valueSequenceNext="WF_ORG_ROLE_SEQ"/>
             <column name="ROLE_NAME_EN" value="Manager"/>
             <column name="ROLE_NAME_AR" value="مدير"/>
             <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>

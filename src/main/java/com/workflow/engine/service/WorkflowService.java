@@ -27,7 +27,6 @@ public class WorkflowService {
 
     public WfProcess updateWorkflow(Long id, WfProcess process) {
         if (workflowRepository.existsById(id)) {
-            process.setProcessCode(String.valueOf(id));
             return workflowRepository.save(process);
         } else {
             return null;

@@ -7,7 +7,7 @@
 
     <changeSet id="INS-0000005" author="riyaz.ahmed">
         <insert tableName="WF_GLOBAL_STATE">
-            <column name="ID" value="0000000000"/>
+            <column name="ID" valueSequenceNext="WF_GLOBAL_STATE_SEQ"/>
             <column name="NAME_EN" value="initiated"/>
             <column name="NAME_AR" value="[Initiated in Arabic]"/>
             <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>
@@ -17,7 +17,7 @@
         </insert>
 
         <insert tableName="WF_GLOBAL_STATE">
-            <column name="ID" value="0000000001"/>
+            <column name="ID" valueSequenceNext="WF_GLOBAL_STATE_SEQ"/>
             <column name="NAME_EN" value="inprocess"/>
             <column name="NAME_AR" value="[Inprocess in Arabic]"/>
             <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>
@@ -27,7 +27,7 @@
         </insert>
 
         <insert tableName="WF_GLOBAL_STATE">
-            <column name="ID" value="0000000002"/>
+            <column name="ID" valueSequenceNext="WF_GLOBAL_STATE_SEQ"/>
             <column name="NAME_EN" value="parked"/>
             <column name="NAME_AR" value="[Parked in Arabic]"/>
             <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>
@@ -37,7 +37,7 @@
         </insert>
 
         <insert tableName="WF_GLOBAL_STATE">
-            <column name="ID" value="0000000003"/>
+            <column name="ID" valueSequenceNext="WF_GLOBAL_STATE_SEQ"/>
             <column name="NAME_EN" value="reject"/>
             <column name="NAME_AR" value="[Reject in Arabic]"/>
             <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>
@@ -47,7 +47,7 @@
         </insert>
 
         <insert tableName="WF_GLOBAL_STATE">
-            <column name="ID" value="0000000004"/>
+            <column name="ID" valueSequenceNext="WF_GLOBAL_STATE_SEQ"/>
             <column name="NAME_EN" value="done"/>
             <column name="NAME_AR" value="[Done in Arabic]"/>
             <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>
@@ -57,7 +57,7 @@
         </insert>
 
         <insert tableName="WF_GLOBAL_STATE">
-            <column name="ID" value="0000000005"/>
+            <column name="ID" valueSequenceNext="WF_GLOBAL_STATE_SEQ"/>
             <column name="NAME_EN" value="forward"/>
             <column name="NAME_AR" value="[Forward in Arabic]"/>
             <column name="CREATED_ON" valueDate="CURRENT_TIMESTAMP"/>

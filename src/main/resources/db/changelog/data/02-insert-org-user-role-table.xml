@@ -7,24 +7,27 @@
 
     <changeSet id="0000000002" author="riyaz.ahmed">
         <insert tableName="ORG_USER_ROLE">
-            <column name="ROLE_ID" value="001"/>
-            <column name="LOGIN_ID" value="1"/>
+            <column name="ID" valueSequenceNext="WF_ORG_USER_ROLE_SEQ"/>
+            <column name="ROLE_ID" value="1"/>
+            <column name="USER_ID" value="1"/>
             <column name="CREATED_ON" value="2023-10-10T10:00:00"/>
             <column name="CREATED_BY" value="admin"/>
             <column name="UPDATED_ON" value="2023-10-10T15:00:00"/>
             <column name="UPDATED_BY" value="admin"/>
         </insert>
         <insert tableName="ORG_USER_ROLE">
-            <column name="ROLE_ID" value="002"/>
-            <column name="LOGIN_ID" value="2"/>
+            <column name="ID" valueSequenceNext="WF_ORG_USER_ROLE_SEQ"/>
+            <column name="ROLE_ID" value="2"/>
+            <column name="USER_ID" value="2"/>
             <column name="CREATED_ON" value="2023-10-11T11:00:00"/>
             <column name="CREATED_BY" value="admin"/>
             <column name="UPDATED_ON" value="2023-10-11T16:00:00"/>
             <column name="UPDATED_BY" value="admin"/>
         </insert>
         <insert tableName="ORG_USER_ROLE">
-            <column name="ROLE_ID" value="003"/>
-            <column name="LOGIN_ID" value="2"/>
+            <column name="ID" valueSequenceNext="WF_ORG_USER_ROLE_SEQ"/>
+            <column name="ROLE_ID" value="3"/>
+            <column name="USER_ID" value="2"/>
             <column name="CREATED_ON" value="2023-10-12T12:00:00"/>
             <column name="CREATED_BY" value="admin"/>
             <column name="UPDATED_ON" value="2023-10-12T17:00:00"/>

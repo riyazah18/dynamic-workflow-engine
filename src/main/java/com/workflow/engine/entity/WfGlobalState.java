@@ -1,9 +1,6 @@
 package com.workflow.engine.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Nationalized;
@@ -15,8 +12,9 @@ import java.time.Instant;
 @Entity
 public class WfGlobalState {
     @Id
-    @Column(name = "ID", nullable = false, length = 30)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wf_global_state_seq_generator")
+    @SequenceGenerator(name="wf_global_state_seq_generator", sequenceName = "wf_global_state_seq", allocationSize = 1)
+    private Long id;
 
     @Column(name = "NAME_EN", nullable = false, length = 100)
     private String nameEn;

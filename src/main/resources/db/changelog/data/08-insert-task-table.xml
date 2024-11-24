@@ -5,31 +5,41 @@
     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
     <changeSet id="INS-0000008" author="riyaz.ahmed">
-        <insert tableName="task">
-            <column name="title" value="Implement Login Feature"/>
-            <column name="description" value="Create a secure login feature for the app"/>
-            <column name="created_date" value="2024-01-01T10:00:00"/>
-            <column name="last_updated_date" value="2024-01-01T10:00:00"/>
-            <column name="current_state_id" value="0000000000"/> <!-- "To Do" -->
-            <column name="assignee_id" value="1"/> <!-- "developer_1" -->
+        <insert tableName="TASK">
+            <column name="ID" valueSequenceNext="TASK_SEQ"/>
+            <column name="TITLE" value="Implement Login Feature"/>
+            <column name="DESCRIPTION" value="Create a secure login feature for the app"/>
+            <column name="CURRENT_STATE_ID" value="0000000000"/>
+            <column name="ASSIGNEE_ID" value="john_doe"/>
+            <column name="CREATED_DATE" value="2024-01-01T10:00:00"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="LAST_UPDATED_DATE" value="2024-01-01T10:00:00"/>
+            <column name="UPDATED_BY" value="admin"/>
+
         </insert>
 
         <insert tableName="task">
+            <column name="ID" valueSequenceNext="TASK_SEQ"/>
             <column name="title" value="Build Task Management API"/>
             <column name="description" value="Develop endpoints for task management"/>
-            <column name="created_date" value="2024-01-02T12:00:00"/>
-            <column name="last_updated_date" value="2024-01-02T12:00:00"/>
-            <column name="current_state_id" value="0000000000"/> <!-- "To Do" -->
-            <column name="assignee_id" value="1"/> <!-- "developer_1" -->
+            <column name="CURRENT_STATE_ID" value="0000000000"/>
+            <column name="ASSIGNEE_ID" value="john_doe"/>
+            <column name="CREATED_DATE" value="2024-01-01T10:00:00"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="LAST_UPDATED_DATE" value="2024-01-01T10:00:00"/>
+            <column name="UPDATED_BY" value="admin"/>
         </insert>
 
         <insert tableName="task">
+            <column name="ID" valueSequenceNext="TASK_SEQ"/>
             <column name="title" value="Set Up Continuous Integration"/>
             <column name="description" value="Configure CI pipeline for project deployment"/>
-            <column name="created_date" value="2024-01-03T15:00:00"/>
-            <column name="last_updated_date" value="2024-01-03T15:00:00"/>
-            <column name="current_state_id" value="0000000000"/> <!-- "In Progress" -->
-            <column name="assignee_id" value="1"/> <!-- "project_manager" -->
+            <column name="CURRENT_STATE_ID" value="0000000000"/>
+            <column name="ASSIGNEE_ID" value="john_doe"/>
+            <column name="CREATED_DATE" value="2024-01-01T10:00:00"/>
+            <column name="CREATED_BY" value="admin"/>
+            <column name="LAST_UPDATED_DATE" value="2024-01-01T10:00:00"/>
+            <column name="UPDATED_BY" value="admin"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

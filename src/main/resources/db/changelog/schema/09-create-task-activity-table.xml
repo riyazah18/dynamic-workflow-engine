@@ -5,16 +5,17 @@
     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
     <changeSet id="0000000009" author="riyaz.ahmed">
+        <createSequence cycle="false" incrementBy="1" maxValue="9223372036854775807" minValue="-9223372036854775808"
+                        sequenceName="TASK_ACTIVITY_SEQ" startValue="1"/>
         <createTable tableName="TASK_ACTIVITY">
-            <column name="ID" type="BIGINT" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_TASK_ACTIVITY"/>
+            <column computed="false" name="ID" type="bigint">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TASK_ACTIVITY_ID"/>
             </column>
             <column name="TASK_ID" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
             <column name="COMMENTS" type="TEXT"/>
             <column name="CREATED_DATE" type="DATETIME"/>
-            <column name="LAST_UPDATED_DATE" type="DATETIME"/>
             <column name="PREVIOUS_STATE_ID" type="varchar(30)"/>
             <column name="CURRENT_STATE_ID" type="varchar(30)"/>
             <column name="PERFORM_BY" type="varchar(30)"/>

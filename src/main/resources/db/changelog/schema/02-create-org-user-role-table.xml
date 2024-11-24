@@ -6,14 +6,16 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
     <changeSet id="0000000002" author="riyaz.ahmed">
+        <createSequence cycle="false" incrementBy="1" maxValue="9223372036854775807" minValue="-9223372036854775808"
+                        sequenceName="WF_ORG_USER_ROLE_SEQ" startValue="1"/>
         <createTable tableName="ORG_USER_ROLE">
-            <column name="id" type="bigint" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_ORG_USER_ROLE"/>
+            <column computed="false" name="ID" type="bigint">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_WF_ORG_USER_ROLE_ID"/>
             </column>
-            <column name="ROLE_ID" type="varchar(25)">
+            <column name="ROLE_ID" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="LOGIN_ID" type="bigint">
+            <column name="USER_ID" type="bigint">
                 <constraints nullable="false"/>
             </column>
             <column name="CREATED_ON" type="datetime">
@@ -37,7 +39,7 @@
                 referencedColumnNames="ID"/>
         <addForeignKeyConstraint
                 baseTableName="ORG_USER_ROLE"
-                baseColumnNames="LOGIN_ID"
+                baseColumnNames="USER_ID"
                 constraintName="FK_ORG_USER_ROLE_ID_FROM_USER"
                 referencedTableName="USER"
                 referencedColumnNames="ID"/>

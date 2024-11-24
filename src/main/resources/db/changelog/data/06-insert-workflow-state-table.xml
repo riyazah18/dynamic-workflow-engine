@@ -7,8 +7,9 @@
 
     <changeSet id="INS-00005" author="riyaz.ahmed">
         <insert tableName="WF_STATE">
-            <column name="PROCESS_CODE" value="PROC001"/>
-            <column name="STATE_CODE" value="0000000000"/>
+            <column name="ID" valueSequenceNext="WF_STATE_SEQ"/>
+            <column name="PROCESS_CODE" value="1"/>
+            <column name="STATE_CODE" value="1"/>
             <column name="IS_START" value="true"/>
             <column name="IS_END" value="false"/>
             <column name="IS_ADHOC" value="false"/>
@@ -19,8 +20,9 @@
             <column name="UPDATED_BY" value="updater"/>
         </insert>
         <insert tableName="WF_STATE">
-            <column name="PROCESS_CODE" value="PROC002"/>
-            <column name="STATE_CODE" value="0000000001"/>
+            <column name="ID" valueSequenceNext="WF_STATE_SEQ"/>
+            <column name="PROCESS_CODE" value="2"/>
+            <column name="STATE_CODE" value="2"/>
             <column name="IS_START" value="false"/>
             <column name="IS_END" value="true"/>
             <column name="IS_ADHOC" value="true"/>
@@ -31,8 +33,9 @@
             <column name="UPDATED_BY" value="updater"/>
         </insert>
         <insert tableName="WF_STATE">
-            <column name="PROCESS_CODE" value="PROC002"/>
-            <column name="STATE_CODE" value="0000000002"/>
+            <column name="ID" valueSequenceNext="WF_STATE_SEQ"/>
+            <column name="PROCESS_CODE" value="3"/>
+            <column name="STATE_CODE" value="2"/>
             <column name="IS_START" value="false"/>
             <column name="IS_END" value="true"/>
             <column name="IS_ADHOC" value="true"/>
@@ -43,8 +46,9 @@
             <column name="UPDATED_BY" value="updater"/>
         </insert>
         <insert tableName="WF_STATE">
-            <column name="PROCESS_CODE" value="PROC002"/>
-            <column name="STATE_CODE" value="0000000005"/>
+            <column name="ID" valueSequenceNext="WF_STATE_SEQ"/>
+            <column name="PROCESS_CODE" value="2"/>
+            <column name="STATE_CODE" value="5"/>
             <column name="IS_START" value="false"/>
             <column name="IS_END" value="true"/>
             <column name="IS_ADHOC" value="true"/>
@@ -55,8 +59,9 @@
             <column name="UPDATED_BY" value="updater"/>
         </insert>
         <insert tableName="WF_STATE">
-            <column name="PROCESS_CODE" value="PROC003"/>
-            <column name="STATE_CODE" value="0000000003"/>
+            <column name="ID" valueSequenceNext="WF_STATE_SEQ"/>
+            <column name="PROCESS_CODE" value="3"/>
+            <column name="STATE_CODE" value="3"/>
             <column name="IS_START" value="false"/>
             <column name="IS_END" value="true"/>
             <column name="IS_ADHOC" value="true"/>
@@ -67,8 +72,9 @@
             <column name="UPDATED_BY" value="updater"/>
         </insert>
         <insert tableName="WF_STATE">
-            <column name="PROCESS_CODE" value="PROC003"/>
-            <column name="STATE_CODE" value="0000000004"/>
+            <column name="ID" valueSequenceNext="WF_STATE_SEQ"/>
+            <column name="PROCESS_CODE" value="3"/>
+            <column name="STATE_CODE" value="4"/>
             <column name="IS_START" value="false"/>
             <column name="IS_END" value="true"/>
             <column name="IS_ADHOC" value="true"/>

@@ -1,8 +1,6 @@
 package com.workflow.engine.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Nationalized;
@@ -15,8 +13,9 @@ import java.time.Instant;
 @Entity
 public class WfProcess {
     @Id
-    @Column(name = "PROCESS_CODE", nullable = false, length = 25)
-    private String processCode;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wf_process_seq_generator")
+    @SequenceGenerator(name="wf_process_seq_generator", sequenceName = "wf_process_seq", allocationSize = 1)
+    private Long id;
 
     @Column(name = "PROCESS_NAME_EN", nullable = false)
     private String processNameEn;

@@ -12,8 +12,8 @@ import java.time.Instant;
 @Table(name = "TASK_ACTIVITY", schema = "dbo")
 public class TaskActivity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "task_activity_seq_generator")
+    @SequenceGenerator(name="task_activity_seq_generator", sequenceName = "task_activity_seq", allocationSize = 1)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -26,9 +26,6 @@ public class TaskActivity {
 
     @Column(name = "CREATED_DATE")
     private Instant createdDate;
-
-    @Column(name = "LAST_UPDATED_DATE")
-    private Instant lastUpdatedDate;
 
     @Column(name = "PREVIOUS_STATE_ID", length = 30)
     private String previousStateId;

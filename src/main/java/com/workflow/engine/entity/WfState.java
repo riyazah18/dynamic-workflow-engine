@@ -12,8 +12,8 @@ import java.time.Instant;
 @Entity
 public class WfState {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wf_state_seq_generator")
+    @SequenceGenerator(name="wf_state_seq_generator", sequenceName = "wf_state_seq", allocationSize = 1)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

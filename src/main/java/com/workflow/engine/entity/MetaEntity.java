@@ -13,12 +13,13 @@ import java.time.Instant;
 @Table(name = "META_ENTITY", schema = "dbo")
 public class MetaEntity {
     @Id
-    @Column(name = "ID", nullable = false, length = 1)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meta_entity_seq_generator")
+    @SequenceGenerator(name="meta_entity_seq_generator", sequenceName = "meta_entity_seq_seq", allocationSize = 1)
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "PROCESS_CODE", nullable = false)
-    private WfProcess processCode;
+    private WfProcess wfProcess;
 
     @Column(name = "ENTITY_NAME_EN", length = 50)
     private String entityNameEn;

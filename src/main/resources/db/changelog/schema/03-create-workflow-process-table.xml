@@ -5,10 +5,12 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
     <changeSet id="0000000003" author="riyaz.ahmed">
-        <createTable tableName="WF_PROCESS">
-            <column name="PROCESS_CODE" type="varchar(25)" autoIncrement="false">
-                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_PROCESS"/>
-            </column>
+        <createSequence cycle="false" incrementBy="1" maxValue="9223372036854775807" minValue="-9223372036854775808"
+                        sequenceName="WF_PROCESS_SEQ" startValue="1"/>
+       <createTable tableName="WF_PROCESS">
+           <column computed="false" name="ID" type="bigint">
+               <constraints nullable="false" primaryKey="true" primaryKeyName="PK_WF_PROCESS_ID"/>
+           </column>
             <column name="PROCESS_NAME_EN" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>

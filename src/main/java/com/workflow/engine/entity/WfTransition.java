@@ -12,8 +12,8 @@ import java.time.Instant;
 @Entity
 public class WfTransition {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wf_transition_seq_generator")
+    @SequenceGenerator(name="wf_transition_seq_generator", sequenceName = "wf_transition_seq", allocationSize = 1)
     private Long id;
 
     @Column(name = "PROCESS_CODE", nullable = false, length = 25)

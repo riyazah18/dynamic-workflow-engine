@@ -1,9 +1,6 @@
 package com.workflow.engine.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Nationalized;
@@ -15,8 +12,9 @@ import java.time.Instant;
 @Entity
 public class OrgRole {
     @Id
-    @Column(name = "ID", nullable = false, length = 25)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wf_org_role_seq_generator")
+    @SequenceGenerator(name="wf_org_role_seq_generator", sequenceName = "wf_org_role_seq", allocationSize = 1)
+    private Long id;
 
     @Column(name = "ROLE_NAME_EN", nullable = false)
     private String roleNameEn;

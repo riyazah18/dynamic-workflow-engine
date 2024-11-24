@@ -6,9 +6,11 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
     <changeSet id="0000000000" author="riyaz.ahmed">
+        <createSequence cycle="false" incrementBy="1" maxValue="9223372036854775807" minValue="-9223372036854775808"
+                        sequenceName="WF_USER_SEQ" startValue="1"/>
         <createTable tableName="USER">
-            <column name="id" type="bigint" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false" primaryKeyName="PK_WF_USER"/>
+            <column computed="false" name="ID" type="bigint">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_WF_USER_LOGIN_ID"/>
             </column>
             <column name="LOGIN_ID" type="varchar(25)">
                 <constraints nullable="false"/>
@@ -17,6 +19,9 @@
                 <constraints nullable="false"/>
             </column>
             <column name="PASSWORD" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IS_ACTIVE" type="BOOLEAN">
                 <constraints nullable="false"/>
             </column>
             <column name="CREATED_ON" type="datetime">

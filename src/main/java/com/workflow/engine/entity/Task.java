@@ -13,8 +13,8 @@ import java.util.List;
 @Entity
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "task_seq_generator")
+    @SequenceGenerator(name="task_seq_generator", sequenceName = "task_seq", allocationSize = 1)
     private Long id;
 
     @Column(name = "title", nullable = false, length = 100)
@@ -27,8 +27,14 @@ public class Task {
     @Column(name = "created_date")
     private Instant createdDate;
 
+    @Column(name = "created_by")
+    private String createdBy;
+
     @Column(name = "last_updated_date")
     private Instant lastUpdatedDate;
+
+    @Column(name = "updated_by")
+    private String updatedBy;
 
     @Column(name = "current_state_id", length = 30)
     private String currentStateId;

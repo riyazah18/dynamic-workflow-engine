@@ -7,9 +7,10 @@
 
     <changeSet id="INS-0000007" author="riyaz.ahmed">
         <insert tableName="WF_TRANSITION">
-            <column name="PROCESS_CODE" value="PROC001"/>
-            <column name="FROM_STATE_ID" value="0000000000"/>
-            <column name="TO_STATE_ID" value="0000000001"/>
+            <column name="ID" valueSequenceNext="WF_TRANSITION_SEQ"/>
+            <column name="PROCESS_CODE" value="1"/>
+            <column name="FROM_STATE_ID" value="1"/>
+            <column name="TO_STATE_ID" value="2"/>
             <column name="IS_NOTIFICATION_ENABLE" value="True"/>
             <column name="NOTIFICATION_TYPE" value="EMAIL"/>
             <column name="TO_STATE_ID" value="0000000001"/>
@@ -20,9 +21,10 @@
         </insert>
 
         <insert tableName="WF_TRANSITION">
-            <column name="PROCESS_CODE" value="PROC002"/>
-            <column name="FROM_STATE_ID" value="0000000001"/>
-            <column name="TO_STATE_ID" value="0000000002"/>
+            <column name="ID" valueSequenceNext="WF_TRANSITION_SEQ"/>
+            <column name="PROCESS_CODE" value="2"/>
+            <column name="FROM_STATE_ID" value="1"/>
+            <column name="TO_STATE_ID" value="2"/>
             <column name="IS_NOTIFICATION_ENABLE" value="False"/>
             <column name="NOTIFICATION_TYPE" value=""/>
             <column name="CREATED_ON" value="2023-02-01T00:00:00.000"/>
@@ -32,9 +34,10 @@
         </insert>
 
         <insert tableName="WF_TRANSITION">
-            <column name="PROCESS_CODE" value="PROC002"/>
-            <column name="FROM_STATE_ID" value="0000000002"/>
-            <column name="TO_STATE_ID" value="0000000005"/>
+            <column name="ID" valueSequenceNext="WF_TRANSITION_SEQ"/>
+            <column name="PROCESS_CODE" value="3"/>
+            <column name="FROM_STATE_ID" value="2"/>
+            <column name="TO_STATE_ID" value="5"/>
             <column name="IS_NOTIFICATION_ENABLE" value="True"/>
             <column name="NOTIFICATION_TYPE" value="SMS"/>
             <column name="CREATED_ON" value="2023-02-01T00:00:00.000"/>
@@ -44,9 +47,10 @@
         </insert>
 
         <insert tableName="WF_TRANSITION">
-            <column name="PROCESS_CODE" value="PROC003"/>
-            <column name="FROM_STATE_ID" value="0000000005"/>
-            <column name="TO_STATE_ID" value="0000000004"/>
+            <column name="ID" valueSequenceNext="WF_TRANSITION_SEQ"/>
+            <column name="PROCESS_CODE" value="3"/>
+            <column name="FROM_STATE_ID" value="5"/>
+            <column name="TO_STATE_ID" value="4"/>
             <column name="IS_NOTIFICATION_ENABLE" value="True"/>
             <column name="NOTIFICATION_TYPE" value="EMAIL"/>
             <column name="CREATED_ON" value="2023-02-01T00:00:00.000"/>
@@ -56,9 +60,10 @@
         </insert>
 
         <insert tableName="WF_TRANSITION">
-            <column name="PROCESS_CODE" value="PROC003"/>
-            <column name="FROM_STATE_ID" value="0000000005"/>
-            <column name="TO_STATE_ID" value="0000000003"/>
+            <column name="ID" valueSequenceNext="WF_TRANSITION_SEQ"/>
+            <column name="PROCESS_CODE" value="3"/>
+            <column name="FROM_STATE_ID" value="5"/>
+            <column name="TO_STATE_ID" value="3"/>
             <column name="IS_NOTIFICATION_ENABLE" value="True"/>
             <column name="NOTIFICATION_TYPE" value="SMS"/>
             <column name="CREATED_ON" value="2023-02-01T00:00:00.000"/>

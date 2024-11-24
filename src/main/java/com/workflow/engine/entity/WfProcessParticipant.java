@@ -12,13 +12,13 @@ import java.time.Instant;
 @Entity
 public class WfProcessParticipant {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wf_process_participant_seq_generator")
+    @SequenceGenerator(name="wf_process_participant_seq_generator", sequenceName = "wf_process_participant_seq", allocationSize = 1)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "PROCESS_CODE", nullable = false)
-    private WfProcess processCode;
+    private WfProcess wfProcess;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ROLE_ID", nullable = false)
