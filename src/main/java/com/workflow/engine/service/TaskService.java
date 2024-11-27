@@ -70,7 +70,7 @@ public class TaskService {
         WfState currentState = fetchCurrentState(globalState.get());
 
         if (Boolean.TRUE.equals(currentState.getIsStart())) {
-            task.setCurrentStateId(currentState.getStateCode().toString());
+            task.setCurrentStateId(currentState.getStateCode().getId().toString());
         }
     }
 
@@ -115,7 +115,7 @@ public class TaskService {
     private Task saveTask(Task task) {
         TaskActivity activity = new TaskActivity();
         activity.setPerformBy(task.getAssigneeId());
-        activity.setAssigneeId("manager");
+        activity.setAssigneeId("next assignee");
         activity.setPreviousStateId(task.getPreviousStateId());
         activity.setCurrentStateId(task.getCurrentStateId());
         activity.setComments("bjnsbasdbahddd");
